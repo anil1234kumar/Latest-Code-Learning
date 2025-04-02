@@ -1,4 +1,4 @@
-import { Typography } from 'antd';
+import { Typography  } from 'antd';
 import { useTitle } from '@/hooks/useTitle';
 
 const { Title, Paragraph } = Typography;
