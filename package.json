@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky",
-      "test": "echo \"No tests configured\" && exit 0"
+    "prepare": "husky && husky install",
+    "test": "echo \"No tests configured\" && exit 0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
@@ -37,6 +37,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{js,css,md,ts,tsx}": "prettier --write"
+    "*.{js,css,md,ts,tsx}": "prettier --write",
+    "*.{js,css,md}": "prettier --write"
   }
 }
