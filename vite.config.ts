@@ -4,6 +4,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  // server: {
+  //   port: 7000, // Change this to any port you want
+  // },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
