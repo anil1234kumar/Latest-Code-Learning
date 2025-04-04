@@ -6,6 +6,9 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       text: string;
+      tertiary: string;
+      danger: string;
+      success: string;
     };
   }
 }

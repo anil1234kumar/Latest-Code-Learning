@@ -8,11 +8,20 @@ export const CommanButton = styled.button<ButtonProps>`
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  ${({ variant }) => {
+    const variantColors: Record<NonNullable<ButtonProps['variant']>, string> = {
+      primary: '#555ab9',
+      secondary: '#6c757d',
+      tertiary: '#f4a261',
+      danger: '#dc3545',
+      success: '#28a745',
+    };
 
-  ${({ theme, variant }) => css`
-    background: ${variant === 'primary' ? theme.colors.primary : theme.colors.secondary};
-    color: ${theme.colors.text};
-  `}
+    return css`
+      background-color: ${variant ? variantColors[variant] : 'transparent'};
+      color: ${variant === 'secondary' || variant === 'tertiary' ? '#000' : '#fff'};
+    `;
+  }}
 
   &:hover {
     opacity: 0.8;

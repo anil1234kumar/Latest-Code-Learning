@@ -1,4 +1,4 @@
-export type buttonVariant = 'primary' | 'secondary' | 'tertiary';
+export type buttonVariant = 'primary' | 'secondary' | 'tertiary' | 'danger' | 'success';
 export type buttonSize = 'small' | 'medium' | 'large';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
