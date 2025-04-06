@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { CommanButton } from './Button.styles';
-import { ButtonProps } from './Button.types';
+import { CommanButton } from './CustomButton.styles';
+import { CustomButtonProps } from './CustomButton.types';
 
-const Button: FC<ButtonProps> = (props) => {
+const CustomButton: FC<CustomButtonProps> = (props) => {
   // Destructure the props to extract the children and other props
   const { children, variant, ...rest } = props;
 
@@ -13,4 +13,4 @@ const Button: FC<ButtonProps> = (props) => {
   );
 };
 
-export default Button;
+export default CustomButton;

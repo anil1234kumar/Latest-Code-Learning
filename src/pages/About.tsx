@@ -1,4 +1,4 @@
-import Button from '@/components/button';
+import Button from '@/components/customButton';
 import './About.scss';
 
 export const About: React.FC = () => {

@@ -1,11 +1,11 @@
-import { BrowserRouter, useRoutes } from 'react-router-dom';
-import { MainLayout } from './components/layout/MainLayout';
-import { routes } from './routes';
+import { BrowserRouter } from 'react-router-dom';
+// import { routes } from './routes';
+import AppRoutes from './routes/AppRoutes';
 
-function AppRoutes() {
-  const element = useRoutes(routes);
-  return <MainLayout>{element}</MainLayout>;
-}
+// function AppRoutes() {
+//   const element = useRoutes(routes);
+//   return element;
+// }
 
 function App() {
   return (

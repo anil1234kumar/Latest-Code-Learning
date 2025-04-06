@@ -1,15 +1,16 @@
 import styled, { css } from 'styled-components';
-import { ButtonProps } from './Button.types';
+import { CustomButtonProps } from './CustomButton.types';
 
-export const CommanButton = styled.button<ButtonProps>`
+export const CommanButton = styled.button<CustomButtonProps>`
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  width: 100%;
   ${({ variant }) => {
-    const variantColors: Record<NonNullable<ButtonProps['variant']>, string> = {
+    const variantColors: Record<NonNullable<CustomButtonProps['variant']>, string> = {
       primary: '#555ab9',
       secondary: '#6c757d',
       tertiary: '#f4a261',
