@@ -1,5 +1,12 @@
 import { FC } from 'react';
-import { CommanInput, ErrorText, InputWrapper, Label, ToggleIcon } from './CustomInput.styles';
+import {
+  CommanInput,
+  ErrorText,
+  InputContainer,
+  InputWrapper,
+  Label,
+  ToggleIcon,
+} from './CustomInput.styles';
 import { CustomInputProps } from './CustomInput.type';
 import { Eye, EyeOff } from 'lucide-react';
 import { useCustomInput } from './useCustomInput';
@@ -11,7 +18,7 @@ const CustomInput: FC<CustomInputProps> = (props) => {
   const { showPassword, togglePassword, inputType } = useCustomInput();
 
   return (
-    <>
+    <InputContainer>
       <InputWrapper>
         <CommanInput type={isPasswordType ? inputType : type} {...rest} />
         <Label>{label}</Label>
@@ -22,7 +29,7 @@ const CustomInput: FC<CustomInputProps> = (props) => {
         )}
       </InputWrapper>
       {error && <ErrorText>{error}</ErrorText>}
-    </>
+    </InputContainer>
   );
 };
 

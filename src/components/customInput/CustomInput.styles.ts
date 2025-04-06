@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const CommanInput = styled.input`
   padding: 10px 20px;
   font-size: 16px;
@@ -13,13 +18,13 @@ export const CommanInput = styled.input`
 
 export const InputWrapper = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
 `;
 
 export const ToggleIcon = styled.div`
   position: absolute;
   right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
 `;
 

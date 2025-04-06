@@ -10,5 +10,5 @@ export interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputEle
   minLength?: number; // Minimum length of the input value
   pattern?: string; // Regular expression pattern for validation
   label?: string;
-  error?: string;
+  error?: string | boolean; // Error message or boolean indicating error state
 }

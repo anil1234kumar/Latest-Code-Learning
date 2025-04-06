@@ -9,6 +9,8 @@ import * as data from '../../package.json';
 // import { routesConfig } from "../guards/RouteConfig";
 // import ProtectedRouteGuard from "../guards/ProtectedRouteGuard";
 import { publicRoutes } from './routes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppRoutes: React.FC = () => {
   // const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
@@ -19,15 +21,16 @@ const AppRoutes: React.FC = () => {
   }, []);
 
   return (
-    <Routes>
-      {/* Public Routes */}
-      {publicRoutes.map((route) => (
-        <Route element={<PublicRouteGuard />}>
-          <Route key={route.path} path={route.path} element={route.element} />
-        </Route>
-      ))}
-      {/* Private Routes */}
-      {/* {routesConfig.map(({ path, element: Element, module }) => (
+    <>
+      <Routes>
+        {/* Public Routes */}
+        {publicRoutes.map((route) => (
+          <Route element={<PublicRouteGuard />}>
+            <Route key={route.path} path={route.path} element={route.element} />
+          </Route>
+        ))}
+        {/* Private Routes */}
+        {/* {routesConfig.map(({ path, element: Element, module }) => (
         <Route
           key={path}
           element={<ProtectedRouteGuard requiredModule={module} />}
@@ -36,8 +39,10 @@ const AppRoutes: React.FC = () => {
         </Route>
       ))} */}
 
-      {/* <Route path="/unauthorized" element={<Unauthorized />} /> */}
-    </Routes>
+        {/* <Route path="/unauthorized" element={<Unauthorized />} /> */}
+      </Routes>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
 };
 
