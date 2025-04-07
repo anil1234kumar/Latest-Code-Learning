@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Formik, Form } from 'formik';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { signUpSchema } from './signUpValidation';
 import { useSignUp } from './useSignUp';
 import CustomInput from '@/components/customInput';
@@ -16,75 +17,92 @@ const initialValues = {
 
 const SignUp: FC = () => {
   const { handleSignUp, loading } = useSignUp();
+  const { control, handleSubmit } = useForm({
+    defaultValues: initialValues,
+    resolver: yupResolver(signUpSchema),
+    mode: 'onBlur',
+  });
 
   return (
-    <div>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={signUpSchema}
-        onSubmit={(values) => handleSignUp(values)}
-      >
-        {({ errors, touched, handleChange, handleBlur, values }) => (
-          <Form>
-            <FormCard>
+    <>
+      <form onSubmit={handleSubmit(handleSignUp)}>
+        <FormCard>
+          <Controller
+            name="name"
+            control={control}
+            render={({ field, fieldState }) => (
               <CustomInput
                 label="Name"
-                name="name"
                 type="text"
                 placeholder="Enter your name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-                error={touched.name && errors.name}
+                {...field}
+                error={fieldState.isTouched && fieldState.error?.message}
               />
+            )}
+          />
+
+          <Controller
+            name="email"
+            control={control}
+            render={({ field, fieldState }) => (
               <CustomInput
                 label="Email"
-                name="email"
                 type="email"
                 placeholder="Enter your email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-                error={touched.email && errors.email}
+                {...field}
+                error={fieldState.isTouched && fieldState.error?.message}
               />
+            )}
+          />
+
+          <Controller
+            name="mobile"
+            control={control}
+            render={({ field, fieldState }) => (
               <CustomInput
                 label="Mobile"
-                name="mobile"
                 type="text"
                 placeholder="Enter your mobile"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.mobile}
-                error={touched.mobile && errors.mobile}
+                {...field}
+                error={fieldState.isTouched && fieldState.error?.message}
               />
+            )}
+          />
+
+          <Controller
+            name="password"
+            control={control}
+            render={({ field, fieldState }) => (
               <CustomInput
                 label="Password"
-                name="password"
                 type="password"
                 placeholder="Enter your password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.password}
-                error={touched.password && errors.password}
+                {...field}
+                error={fieldState.isTouched && fieldState.error?.message}
               />
+            )}
+          />
+
+          <Controller
+            name="confirmPassword"
+            control={control}
+            render={({ field, fieldState }) => (
               <CustomInput
                 label="Confirm Password"
-                name="confirmPassword"
                 type="password"
                 placeholder="Confirm password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.confirmPassword}
-                error={touched.confirmPassword && errors.confirmPassword}
+                {...field}
+                error={fieldState.isTouched && fieldState.error?.message}
               />
-              <CustomButton type="submit" variant="primary" loading={loading}>
-                Sign Up
-              </CustomButton>
-            </FormCard>
-          </Form>
-        )}
-      </Formik>
-    </div>
+            )}
+          />
+
+          <CustomButton type="submit" variant="primary" loading={loading}>
+            Sign Up
+          </CustomButton>
+        </FormCard>
+      </form>
+    </>
   );
 };
 

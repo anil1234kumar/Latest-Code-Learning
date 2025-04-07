@@ -12,7 +12,6 @@ import { Eye, EyeOff } from 'lucide-react';
 import { useCustomInput } from './useCustomInput';
 
 const CustomInput: FC<CustomInputProps> = (props) => {
-  // Destructure the props to extract the children and other props
   const { type, label, error, ...rest } = props;
   const isPasswordType = type === 'password';
   const { showPassword, togglePassword, inputType } = useCustomInput();
