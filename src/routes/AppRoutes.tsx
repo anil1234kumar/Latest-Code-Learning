@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 // import { publicRoutes} from "../routes";
 // import { useSelector } from "react-redux";
 // import { RootState } from "../redux/store";
-import PublicRouteGuard from '../guards/PublicRouteGuard';
+import PublicRouteGuard from '../guards/publicRouterGuard/PublicRouteGuard.tsx';
 import * as data from '../../package.json';
 // import Unauthorized from "../pages/Unauthorized/Unauthoried";
 // import { routesConfig } from "../guards/RouteConfig";

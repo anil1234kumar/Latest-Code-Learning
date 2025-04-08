@@ -8,6 +8,22 @@ export const publicRoutes: RouteObject[] = [
     path: Path.SIGNUP,
     element: <SignUp />,
   },
+  {
+    path: Path.LOGIN,
+    element: <SignUp />,
+  },
+  {
+    path: Path.FORGOTPASSWORD,
+    element: <SignUp />,
+  },
+  {
+    path: Path.RESETPASSWORD,
+    element: <SignUp />,
+  },
+  {
+    path: Path.OTP,
+    element: <SignUp />,
+  },
 ];
 
 // Private Routes

@@ -11,4 +11,5 @@ export interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputEle
   pattern?: string; // Regular expression pattern for validation
   label?: string;
   error?: string | boolean; // Error message or boolean indicating error state
+  htmlFor?: string; // HTML for attribute for the label
 }

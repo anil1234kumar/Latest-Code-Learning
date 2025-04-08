@@ -9,6 +9,12 @@ declare module 'styled-components' {
       tertiary: string;
       danger: string;
       success: string;
+      background: string;
+      backgroundMain: string;
+      white: string;
+    };
+    backgrounds: {
+      white: string;
     };
   }
 }

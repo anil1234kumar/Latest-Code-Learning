@@ -1,6 +1,6 @@
 // Routing paths
 const Path = {
-  SIGNUP: '/sign-Up',
+  SIGNUP: '/sign-up',
   LOGIN: '/login',
   HOME: '/',
   REGISTER: '/register',

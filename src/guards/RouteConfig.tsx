@@ -20,6 +20,7 @@ import Path from '../guards/RoutePaths';
 // import UploadBannerPreview from '../pages/BannerNotifications/UploadBannerPreview.tsx';
 // import UserAccess from '../pages/SubAdmin/UserAccess.tsx';
 import SignUp from '../pages/signUp/SignUp.tsx';
+// import FogetPassword from '../pages/forgotPassword/FogetPassword.tsx';
 
 export interface RouteConfig {
   path: string;
@@ -30,6 +31,7 @@ export interface RouteConfig {
 
 export const routesConfig: RouteConfig[] = [
   { path: Path.SIGNUP, element: SignUp, module: 'SIGNUP' },
+  // { path: Path.FORGOTPASSWORD, element: FogetPassword, module: 'FORGOTPASSWORD' },
   // { path: Path.HOME, element: Dashboard, module: 'DASHBOARD' },
   // { path: Path.DASHBOARD, element: Dashboard, module: 'DASHBOARD' },
   // { path: Path.USERLIST, element: UserList, module: 'USER LIST' },

@@ -8,5 +8,11 @@ export const theme: DefaultTheme = {
     text: '#ffffff',
     danger: '#dc3545',
     success: '#28a745',
+    background: '#555ab917',
+    backgroundMain: '#555ab9',
+    white: '#ffffff',
+  },
+  backgrounds: {
+    white: '#ffffff',
   },
 };

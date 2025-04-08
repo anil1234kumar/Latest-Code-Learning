@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const CommanInput = styled.input`
@@ -14,10 +15,14 @@ export const CommanInput = styled.input`
   transition: 0.3s ease-in-out;
   border: 1px solid #ccc;
   width: 100%;
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
 `;
 
 export const InputWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const ToggleIcon = styled.div`
