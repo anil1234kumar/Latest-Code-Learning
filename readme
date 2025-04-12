@@ -1,1 +1,2 @@
-node -v  20
+node -v  20 
+npm run dev 

@@ -12,6 +12,7 @@ declare module 'styled-components' {
       background: string;
       backgroundMain: string;
       white: string;
+      main: string;
     };
     backgrounds: {
       white: string;

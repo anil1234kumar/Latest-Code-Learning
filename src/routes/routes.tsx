@@ -1,6 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import Path from '../guards/RoutePaths.tsx';
 import SignUp from '@/pages/signUp/SignUp.tsx';
+import Login from '@/pages/login/login.tsx';
 
 // Public Routes
 export const publicRoutes: RouteObject[] = [
@@ -10,7 +11,7 @@ export const publicRoutes: RouteObject[] = [
   },
   {
     path: Path.LOGIN,
-    element: <SignUp />,
+    element: <Login />,
   },
   {
     path: Path.FORGOTPASSWORD,
