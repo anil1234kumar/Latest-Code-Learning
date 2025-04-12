@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signUpSchema } from './signUpValidation';
 import { useSignUp } from './useSignUp';
@@ -17,15 +17,20 @@ const initialValues = {
 
 const SignUp: FC = () => {
   const { handleSignUp, loading } = useSignUp();
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: initialValues,
     resolver: yupResolver(signUpSchema),
     mode: 'onBlur',
   });
 
+  const onSubmit: SubmitHandler<typeof initialValues> = async (values) => {
+    await handleSignUp(values);
+    reset(initialValues);
+  };
+
   return (
     <>
-      <FormContainer onSubmit={handleSubmit(handleSignUp)}>
+      <FormContainer onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="name"
           control={control}
